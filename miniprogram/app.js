@@ -1,4 +1,5 @@
-
+import User from './model/user'
+import $ from './utils/tool'
 
 App({
   initUiGlobal() {
@@ -22,10 +23,22 @@ App({
   initEnv() {
     wx.cloud.init({traceUser: true })
   },
+  async login() {
+    $.loading()
+    const user = new User()   // 创建新的用户实例
+    const { data: info } = await user.getInfo()   // 获取用户信息
+    if (info.length === 0) {   // 第一次进入小程序的新用户
+      await user.register()    // 在数据库表中加入一条数据
+      $.store.set('encryption', '')
+    } else {   // 注册过的用户， 调用数据库的数据
+      $.store.set('encryption', info[0].encryption)
+    }
+    $.hideLoading()
+  },
   async onLaunch() {
     this.initEnv()
     await this.initUiGlobal()
-
+    this.login()
   },
   globalData: {
     StatusBar: null,

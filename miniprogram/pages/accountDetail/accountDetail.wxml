@@ -28,7 +28,7 @@
 
 <view class="card-btns">
   <text catchtap="onDelete">删 除</text>
-  <text catchtap="onUpdate">修改</text>
+  <text catchtap="onUpdate">修 改</text>
 </view>
 
 

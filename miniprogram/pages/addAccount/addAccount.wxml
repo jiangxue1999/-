@@ -23,16 +23,8 @@
   <view class="card" style="padding-bottom:0;">
     <view class="card-title-box">
       <text class="card-title" style="margin:50rpx;">密码</text>
-      <view class="card-title__btn" catchtap="onCreatePwd">
-        <image src="./../../images/updated.png" />
-        <text>生成并复制</text>
-      </view>
     </view>
     <x-input id="password" placeholder="请输入您的密码" maxLength="32" tag="password" inputValue="{{password}}" bind:inputChange="onInputChange"></x-input>
-    <view class="pwd-setting" catchtap="onPwdSetting">
-      <image src="./../../images/account-setting.png" />
-      <text>选择生成规则</text>
-    </view>
   </view>
 
   <view class="pwd animated fadeIn" wx:if="{{pwdSetting}}">

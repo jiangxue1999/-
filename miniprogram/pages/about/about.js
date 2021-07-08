@@ -1,4 +1,4 @@
-// model.js
+// pages/about/about.js
 Page({
 
   /**

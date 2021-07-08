@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
-
+    "pages/index/index",
+    "model"
   ],
   "window": {
     "backgroundColor": "#FFFFFF",

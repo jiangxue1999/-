@@ -80,3 +80,15 @@ page {
   font-size: var(--main-fontSize);
   margin: 110rpx auto 90rpx auto;
 }
+
+.card-header__show {
+  width: 40rpx;
+  height: 28rpx;
+  position: relative;
+  right: -660rpx;
+  top: -40rpx;
+}
+
+.card-header__show:active {
+  transform: scale(1.1);
+}

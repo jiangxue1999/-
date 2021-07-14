@@ -49,21 +49,7 @@
       <text class="pwd-text">{{passwordLen}}位</text>
     </view>
   </view>
-  <view class="pwd animated fadeIn" wx:if="{{pwdSetting}}">
-    <checkbox-group class="checkbox-group" data-tag="pwdArray" bindchange="onDataSet">
-      <label class="checkbox" wx:for="{{pwdItems}}" wx:key="index">
-        <checkbox value="{{item.arrIndex}}" checked="{{item.checked}}"/>{{item.value}}
-      </label>
-    </checkbox-group>
-    <view class="pwd-len">
-      <view class="pwd-slider">
-        <view class="slider-activeBg"></view>
-        <slider data-tag="passwordLen" bindchanging="onDataSet" bindchange="onDataSet" min="4" max="32" value="{{passwordLen}}" activeColor="#88BC9D" backgroundColor="#88BC9D" block-size="20" />
-      </view>
-      <text class="pwd-text">{{passwordLen}}位</text>
-    </view>
-  </view>
-
+ 
   <view class="card-line">
     <text>更多选项（选填）</text>
     <switch checked="{{moreOptions}}" data-tag="moreOptionsShow" bindchange="onDataSet" color="#66a6ff" />

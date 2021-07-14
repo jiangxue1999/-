@@ -9,7 +9,7 @@
 
 <view class="search">
   <input class="search-text" confirm-type="search" type="text" value="{{keywords}}" placeholder="描述或用户名（支持模糊搜索）" placeholder-class="search-text__search-text" bindinput="onInput" bindconfirm="" />
-  <view class="search-button" catchtap=" ">
+  <view class="search-button" catchtap="onSearch">
     <image class="search-button__img" src="./../../images/home-search.png" />
   </view>
 </view>

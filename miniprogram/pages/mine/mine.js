@@ -1,66 +1,66 @@
-// pages/mine/mine.js
-Page({
+import $ from './../../utils/tool'
+import router from './../../utils/router'
+import User from './../../model/user'
+import Password from './../../model/password'
+import log from './../../utils/log'
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onAbout() {
+    router.push('about')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onShareAppMessage() {
+    return {
+      title: '我在这里记密码，安全简洁，支持指纹验证 ~',
+      path: '/pages/home/home',
+      imageUrl: './../../images/share-bg.png'
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onGithub() {
+    const url = 'https://github.com/arleyGuoLei/wechat-1password'
+    wx.setClipboardData({
+      data: url,
+      success() {
+        $.tip('已复制github链接')
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onZan() {
+    wx.previewImage({
+      urls: ['https://7077-pwd-prod-1301366756.tcb.qcloud.la/admire.jpg']
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  clearAccount() {
+    wx.showModal({
+      title: '提示',
+      content: '清空后无法恢复!!!',
+      confirmText: '清空',
+      confirmColor: '#e64340',
+      async success(res) {
+        if (res.confirm) {
+          const userModel = new User()
+          const passwordModel = new Password()
+          try {
+            if (await userModel.clear() && await passwordModel.clear()) {
+              wx.setStorageSync('pwd', '')
+              $.store.set('encryption', '')
+              $.tip('清空成功!')
+            } else {
+              throw new Error('清空调用云函数出现异常')
+            }
+          } catch (error) {
+            log.error({ msg: error.message })
+            $.tip('清空失败, 请重试!')
+          }
+        } else if (res.cancel) {
+          $.tip('取消清空')
+        }
+      }
+    })
   }
 })

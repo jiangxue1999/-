@@ -18,7 +18,7 @@ Page({
     return {
       title: '我在这里记密码，安全简洁，支持指纹验证 ~',
       path: '/pages/home/home',
-      imageUrl: './../../images/share-bg.png'
+      imageUrl: 'https://bkimg.cdn.bcebos.com/pic/96dda144ad345982b2b7616ba8bf26adcbef77092ebc?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5/format,f_auto'
     }
   },
   onGithub() {

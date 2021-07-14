@@ -32,7 +32,6 @@ Page({
   },
   onZan() {
     wx.previewImage({
- 
       urls: ['https://bkimg.cdn.bcebos.com/pic/b8389b504fc2d5628535223d415a87ef76c6a6efc685?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5/format,f_auto']
     })
   },

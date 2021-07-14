@@ -12,9 +12,9 @@
 </view>
 
 <view class="pwd-box">
-  <x-input cursorSpacing="0" maxLength="16" placeholder="请输入" bind:inputChange="onPwdChange" ></x-input>
+  <x-input cursorSpacing="0" maxLength="16" placeholder="请输入" bind:inputChange="onPwdChange" isPassword="true"></x-input>
   
-  <x-input cursorSpacing="0" maxLength="16" placeholder="再次确认" bind:inputChange="onPwd2Change" ></x-input>
+  <x-input cursorSpacing="0" maxLength="16" placeholder="再次确认" bind:inputChange="onPwd2Change" isPassword="true"></x-input>
 </view>
 
 <checkbox-group class="checkbox-group" bindchange="onChange">

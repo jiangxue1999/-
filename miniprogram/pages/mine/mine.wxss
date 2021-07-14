@@ -12,8 +12,8 @@ page {
 }
 
 .header-img {
-  width: 26rpx;
-  height: 44rpx;
+  width: 50rpx;
+  height: 50rpx;
   margin-left: 32rpx;
 }
 

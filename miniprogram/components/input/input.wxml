@@ -1,6 +1,6 @@
 <view class="input">
   <text class="input-placeholder">{{placeholderValue}}</text>
-  <image class="card-header__show" src="./../../images/list-show.png" catchtap="showpassword"/>
+  <image wx:if="{{isPassword}}" class="card-header__show" src="./../../images/list-show.png" catchtap="showpassword"/>
   <input 
     wx:if="{{!isShow1}}"
     class="input-text" 
@@ -9,7 +9,7 @@
     maxlength="{{maxLength}}" 
     bindinput="onInput"
     cursor-spacing="{{cursorSpacing}}"
-    type="text"
+    password="{{isPassword}}"
     focus="{{autoFocus}}"
   />
   <input 
@@ -20,7 +20,7 @@
     maxlength="{{maxLength}}" 
     bindinput="onInput"
     cursor-spacing="{{cursorSpacing}}"
-    type="password"
+    type="text"
     focus="{{autoFocus}}"
   />
 </view>

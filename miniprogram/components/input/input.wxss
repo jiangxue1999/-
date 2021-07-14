@@ -26,7 +26,7 @@
   line-height: 72rpx;
   position: absolute;
   top: 4rpx;
-  width: 686rpx;
+  width: 600rpx;
 }
 
 .input-text {
@@ -38,4 +38,11 @@
 
 .input-placeholder {
   color:rgba(204,204,204,1);
+}
+.card-header__show {
+  width: 40rpx;
+  height: 28rpx;
+  position: relative;
+  right: -620rpx;
+  top: -20rpx;
 }

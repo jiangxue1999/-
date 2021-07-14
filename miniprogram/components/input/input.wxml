@@ -1,13 +1,26 @@
 <view class="input">
   <text class="input-placeholder">{{placeholderValue}}</text>
+  <image class="card-header__show" src="./../../images/list-show.png" catchtap="showpassword"/>
   <input 
+    wx:if="{{!isShow1}}"
     class="input-text" 
     placeholder="" 
     value="{{inputValue}}" 
     maxlength="{{maxLength}}" 
     bindinput="onInput"
     cursor-spacing="{{cursorSpacing}}"
-    password="{{isPassword}}"
+    type="text"
+    focus="{{autoFocus}}"
+  />
+  <input 
+    wx:else
+    class="input-text" 
+    placeholder="" 
+    value="{{inputValue}}" 
+    maxlength="{{maxLength}}" 
+    bindinput="onInput"
+    cursor-spacing="{{cursorSpacing}}"
+    type="password"
     focus="{{autoFocus}}"
   />
 </view>

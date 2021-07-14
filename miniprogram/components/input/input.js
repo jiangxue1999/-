@@ -25,17 +25,21 @@ Component({
       value: false
     },
     autoFocus: {
+      isShow1:true,
       type: Boolean,
       value: false
     }
   },
   data: {
-    placeholderValue: ''
+    isShow1:false,
+    placeholderValue: '',
+    newPassword:''
   },
   methods: {
     onInput(e) {
       const { detail: { value } } = e
       const { properties: { tag } } = this
+      this.setData({newPassword:value})
       this.triggerEvent('inputChange', { value, tag })
       if (value !== '') {
         this.setData({ placeholderValue: '' })
@@ -48,6 +52,15 @@ Component({
       if (typeof value === 'undefined' || value === '') {
         this.setData({ placeholderValue: placeholder })
       }
+    },
+    showpassword(){
+      if(this.data.isShow1){
+        this.setData({isShow1:false});
+        this.setData({inputValue:this.data.newPassword});
+    }else{
+      this.setData({isShow1:true});
+      this.setData({inputValue:this.data.newPassword});
+    }
     }
   },
   lifetimes: {

@@ -12,10 +12,9 @@
 </view>
 
 <view class="pwd-box">
-  <x-input cursorSpacing="0" maxLength="16" placeholder="请输入" bind:inputChange="onPwdChange" isPassword="true"></x-input>
-  <image class="card-header__show" src="./../../images/list-show.png" />
-  <x-input cursorSpacing="0" maxLength="16" placeholder="再次确认" bind:inputChange="onPwd2Change" isPassword="true"></x-input>
-  <image class="card-header__show" src="./../../images/list-show.png" />
+  <x-input cursorSpacing="0" maxLength="16" placeholder="请输入" bind:inputChange="onPwdChange" ></x-input>
+  
+  <x-input cursorSpacing="0" maxLength="16" placeholder="再次确认" bind:inputChange="onPwd2Change" ></x-input>
 </view>
 
 <checkbox-group class="checkbox-group" bindchange="onChange">
